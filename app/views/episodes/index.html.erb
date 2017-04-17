@@ -1,7 +1,11 @@
+<% if current_user %>
 <h1>All Episodes</h1>
 
 <ul>
   <% @episodes.each do |episode| %>
-    <li><%= "Episode #{episode.number} - #{episode.date.strftime("%B %d, %Y")}"%></li>
+    <li><%= link_to "Episode #{episode.number} - #{episode.date.strftime("%B %d, %Y")}", episode_path(episode)%></li>
   <% end %>
 </ul>
+<% else  %>
+<p><a href="/login">Please log in to view this content</a></p>
+<% end %>

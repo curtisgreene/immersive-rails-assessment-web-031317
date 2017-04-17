@@ -1,0 +1,9 @@
+<h1>All Appearances</h1>
+
+<ul>
+  <% @appearances.each do |appearance| %>
+  <li>
+    Guest Id: <%= appearance.guest_id %>, Episode Id: <%= appearance.episode_id %>
+  </li>
+  <% end %>
+</ul>

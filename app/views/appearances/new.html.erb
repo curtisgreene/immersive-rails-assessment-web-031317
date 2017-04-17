@@ -1,0 +1,17 @@
+<% if current_user %>
+<h1>Create an appearance!</h1>
+
+<%= form_for(@appearance) do |f| %>
+<p>Please select a guest</p>
+<%= f.select :guest_id,
+    options_from_collection_for_select(@guests, :id, :name, @appearance.guest_id) %>
+<p>Please select a guest</p>
+<%= f.select :episode_id,
+    options_from_collection_for_select(@episodes, :id, :date, @appearance.episode_id) %>
+<p>Please select a rating (1-5)</p><br>
+<%= f.number_field :rating %><br>
+<%= f.submit "Create Appearance" %>
+<% end %>
+<% else  %>
+<p><a href="/login">Please log in to view this content</a></p>
+<% end %>

@@ -1,0 +1,12 @@
+<% if current_user %>
+
+<h1>Episode Number <%= @episode.id %></h1>
+<ul>
+  <% @episode.guests.each do |guest| %>
+  <li><%= guest.name %></li>
+  <% end %>
+</ul>
+
+<% else  %>
+<p><a href="/login">Please log in to view this content</a></p>
+<% end %>
