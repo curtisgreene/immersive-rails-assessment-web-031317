@@ -5,7 +5,7 @@
 <p>Please select a guest</p>
 <%= f.select :guest_id,
     options_from_collection_for_select(@guests, :id, :name, @appearance.guest_id) %>
-<p>Please select a guest</p>
+<p>Please select an episode</p>
 <%= f.select :episode_id,
     options_from_collection_for_select(@episodes, :id, :date, @appearance.episode_id) %>
 <p>Please select a rating (1-5)</p><br>
